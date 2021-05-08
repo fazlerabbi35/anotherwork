@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AnotherFolder Task</title>
+</head>
+<body>
+	<h1 align="center">It's another Folder of Django work</h1>
+
+	{% for i in profile %}
+
+		<h2>{{ i.name }}</h2>
+		<h4>{{ i.address }}</h4>
+		<h2>{{ i.age }}</h2>
+		<img src="{{ i.image.url }}" alt="Image">
+		<hr>
+
+
+
+	{% endfor %}
+
+
+</body>
+</html>
