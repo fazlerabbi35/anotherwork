@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'staffacc'
+# our created apps
+    'staffacc',
+    'album'
 ]
 
 MIDDLEWARE = [
