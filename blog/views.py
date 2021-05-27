@@ -14,7 +14,7 @@ def blog_list(request):
 
     posts = Post.objects.all()
 
-    paginator = Paginator(posts, 1)
+    paginator = Paginator(posts, 3)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {
@@ -28,7 +28,7 @@ def blog_list(request):
 def blog_details(request, slug):
 
     post = Post.objects.get(slug=slug)
-    similar_post = post.tags.similar_objects()[:4]
+    similar_post = post.tags.similar_objects()[:2]
     comments = post.comments.all()
 
     if request.method == 'POST':
