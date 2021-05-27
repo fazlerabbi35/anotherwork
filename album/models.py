@@ -4,6 +4,6 @@ from django.db import models
 
 class Album(models.Model):
 
-    thumbnial = models.ImageField(upload_to='album/photo/')
+    thumbnial = models.ImageField(upload_to='public/')
     description = models.TextField()
     creation = models.DateTimeField(auto_now_add=True)
