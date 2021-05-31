@@ -13,7 +13,7 @@
     />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../favicon.ico" />
+    <link rel="shortcut icon" href="../../static/blueberry/favicon.ico" />
 
     <!-- Font -->
     <link
@@ -176,6 +176,8 @@
             </div>
           </div>
 -->
+
+
           <!-- Search Section -->
           <div class="bg-navy">
             <div class="bg-img-hero-center" style="background-image: url({% static 'blueberry/assets/svg/components/abstract-shapes-19.svg' %});">
@@ -202,7 +204,7 @@
           </div>
           <!-- End Search Section -->
 
-
+          
 
         </div>
       </div>
@@ -213,6 +215,20 @@
       <!-- Blog Listing Section -->
      
       <div class="container space-bottom-3">
+
+        <a href="{% url 'blog:blog_list' %}"
+          <h4>All Category</h4>
+        </a> 
+
+
+        {% for category in categories %}
+
+          <a href="{{ category.get_absolute_url }}">
+            <h5>{{ category.name }}</h5>
+          </a>
+
+        {% endfor %}
+
 
         <div class="w-md-75 w-lg-60 mx-md-auto">
 
@@ -229,11 +245,13 @@
             <div class="card-body">
             
 
-              <h2 class="h3">
+              <h5>{{ post.category.name }}</h5>
+
+              <h3>
                 <a class="text-inherit" href=""
                   >{{ post.title }}</a
                 >
-              </h2>
+              </h3>
 
               <p>
                 {{ post.short_description }}
