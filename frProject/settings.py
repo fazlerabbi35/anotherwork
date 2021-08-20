@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-esl=k3*08-3+2+99!&*+o1li&6zmsy+-*2prjdf+^h62%58##l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
+    'cloudinary_storage',
+    'cloudinary',
+
 
     # our created apps
     'staffacc',
@@ -141,6 +146,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 
+
 # AWS_ACCESS_KEY_ID = 'AKIARVGPJVYVJ7ZS57EM'
 # AWS_SECRET_ACCESS_KEY = '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'
 # AWS_STORAGE_BUCKET_NAME = 'nasim.secpstorage'
@@ -148,6 +154,15 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 # #AWS_DEFAULT_ACL = None
 # AWS_QUERYSTRING_AUTH = False
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'doaioj2cf',
+    'API_KEY': '196925795495435',
+    'API_SECRET': 'VfzYjlYlG_Uu-d8DoFd3LvrfIZw'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # Default primary key field type
