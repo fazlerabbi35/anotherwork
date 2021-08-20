@@ -26,9 +26,9 @@ from django.views.static import serve as mediaserve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('staffacc/', include('staffacc.urls', namespace='staffacc')),
+   
     path('', include('blog.urls', namespace='blog')),
-    path('album/', include('album.urls', namespace='album')),
+   
     path('summernote/', include('django_summernote.urls'))
 ]
 

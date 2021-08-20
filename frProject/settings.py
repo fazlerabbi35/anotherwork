@@ -47,9 +47,8 @@ INSTALLED_APPS = [
 
 
     # our created apps
-    'staffacc',
-    'album',
     'blog',
+    
     # 'storages',
     'taggit'
 ]
